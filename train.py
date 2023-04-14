@@ -24,12 +24,12 @@ if len(accepted_images) > len(rejected_images):
     num_images_selected : int = len(rejected_images)
     accepted_images = np.random.choice(
         accepted_images, num_images_selected, replace=False
-    )
+    ) # type: ignore
 else:
     num_images_selected : int = len(accepted_images)
     rejected_images = np.random.choice(
         rejected_images, num_images_selected, replace=False
-    )
+    ) # type: ignore
 
 print(f"Num of images selected after downsampling: {num_images_selected}")
 print("Creating dataset...")
@@ -65,7 +65,7 @@ data_augmenter = tf.keras.preprocessing.image.ImageDataGenerator(
     vertical_flip=True,
     rescale=1.0 / 255,
     rotation_range=45,
-    zoom_range=[0.5, 1.5],
+    zoom_range=[0.5, 1.5], # type: ignore
     width_shift_range=0.25,
     height_shift_range=0.25,
     validation_split=0.2,
