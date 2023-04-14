@@ -157,6 +157,7 @@ data
 
 # Models 
 models
+model.tflite
 
 # Visual Studio Code
 .vscode/
